@@ -1,38 +1,28 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Jash;
+  src: url("./Asserts/fonts/ComforterBrush-Regular.ttf");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: Gamer;
+  src: url("./Asserts/fonts/TarrgetExpanded-Z3ZJ.otf");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: Designer;
+  src: url("./Asserts/fonts/IAmADesigner.otf");
+}
+@font-face {
+  font-family: Prince;
+  src: url("./Asserts/fonts/PRINP___.ttf");
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav {
+  background-color: rgb(0, 0, 0);
 }
-
-.App-link {
-  color: #61dafb;
+.HomeBody {
+  background-color: rgb(24, 22, 22);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::-webkit-scrollbar {
+  display: none;
 }

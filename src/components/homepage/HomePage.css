@@ -1,0 +1,77 @@
+.GamerQuotes {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: xx-large;
+  color: rgb(204, 53, 204);
+}
+
+/* .HomeBody{
+    background-color:rgb(34, 30, 30)
+} */
+
+.SearchTab {
+  display: flex;
+  justify-content: center;
+}
+
+#searchBar {
+  /* width:80%; */
+  transition: width 10s linear;
+  width: 90%;
+  border-radius: 20px;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: black;
+  color: rgb(204, 53, 204);
+  font-family: Designer;
+}
+
+.SearchButton {
+  display: flex;
+  justify-content: center;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(204, 53, 204);
+  opacity: 1; /* Firefox */
+}
+
+.popuptext {
+  color: rgb(204, 53, 204);
+  font-family: Designer;
+}
+
+.searchbuttontype {
+  color: black;
+  background-color: rgb(204, 53, 204);
+  font-family: Designer;
+}
+
+.categorys {
+  display: flex;
+  justify-content: center;
+  font-family: Designer;
+}
+
+.categorylabel {
+  color: rgb(204, 53, 204);
+}
+
+#category {
+  background-color: black;
+  color: rgb(204, 53, 204);
+  border-radius: 50px;
+  text-align: center;
+}
+.platformdiv {
+  display: flex;
+  justify-content: center;
+  font-family: Designer;
+  color: rgb(204, 53, 204);
+}
+
+#platformvalue {
+  align-items: center;
+}
