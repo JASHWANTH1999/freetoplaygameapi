@@ -5,14 +5,25 @@ const searchvalue = createSlice({
   initialState: {
     gamername: null,
     category: null,
-    platform: "",
-    sorted: false,
+    platform: null,
+    sorted: null,
+    games: null,
+    // callapi: false,
   },
   reducers: {
+    // startgetapi(state) {
+    //   state.callapi = !state.callapi;
+    // },
     getsearchvalue(state, action) {
       const newitem = action.payload;
       state.gamername = newitem.gname;
       state.category = newitem.cname;
+      state.platform = newitem.pname;
+      state.sorted = newitem.sname;
+    },
+    getgamesapi(state, action) {
+      const newitems = action.payload;
+      state.games = newitems.gamesmultiple;
     },
   },
 });

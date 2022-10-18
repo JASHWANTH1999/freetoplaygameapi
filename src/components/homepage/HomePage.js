@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import "../../App.css";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 import "./HomePage.css";
 import { useTransition, animated } from "react-spring";
 
 import { searchvalueactions } from "../../redux/SearchBarvalue";
 const HomePage = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [bar, setbar] = useState(false);
-  const personname = useSelector((state) => state.searchvalue.gamername);
-  const categoryname = useSelector((state) => state.searchvalue.category);
   const [gname, setgname] = useState("");
   const [cname, setcname] = useState("");
+  const [pname, setpname] = useState("");
+  const [sname, setsname] = useState("");
   const transition = useTransition(bar, {
     from: { x: -100, y: 0, width: 100, opacity: 0.5, delay: 200 },
     enter: { x: 0, y: 0, width: 800, opacity: 1 },
@@ -25,18 +26,20 @@ const HomePage = () => {
     setcname(e.target.value);
   };
   const platformHandler = (e) => {
-    //
+    setpname(e.target.value);
   };
   const submithandler = (event) => {
     event.preventDefault();
-    dispatch(searchvalueactions.getsearchvalue({ gname, cname }));
-    console.log(gname);
-    console.log(personname);
-    console.log(categoryname);
+    dispatch(searchvalueactions.getsearchvalue({ gname, cname, pname, sname }));
+    // dispatch(searchvalueactions.getgamesapi());
+    navigate("/gameslistpage");
+  };
+  const sortedHandler = (e) => {
+    setsname(e.target.value);
   };
 
   return (
-    <div className="HomeBody">
+    <div className="container-fluid">
       <div>
         <div
           className="GamerQuotes"
@@ -44,10 +47,10 @@ const HomePage = () => {
         >
           {bar ? <p>Keep calm and game on.</p> : ""}
         </div>
-        <form className="container mt-3" onSubmit={submithandler}>
+        <form className="mt-3" onSubmit={submithandler}>
           <div>
             {!bar ? (
-              <div className="SearchButton m-2" style={{ color: "aliceblue" }}>
+              <div className="SearchButton m-2">
                 <div
                   className="popuptext"
                   onClick={() => {
@@ -81,6 +84,7 @@ const HomePage = () => {
                 Category:-
               </label>
               <select name="category" id="category" onChange={categoryvalue}>
+                <option>select the option</option>
                 <option value="shooter">shooter</option>
                 <option value="moba">moba</option>
                 <option value="anime">anime</option>
@@ -112,7 +116,7 @@ const HomePage = () => {
                 type="radio"
                 id="platformvalue"
                 name="platform"
-                value="web-browser"
+                value="browser"
                 style={{ accentColor: "yellow" }}
                 onChange={platformHandler}
               />
@@ -128,6 +132,7 @@ const HomePage = () => {
                 name="sorted"
                 value="alphabetical"
                 style={{ accentColor: "green" }}
+                onChange={sortedHandler}
               />
               <label htmlFor="html">alphabetical</label>
               <br />
@@ -137,6 +142,7 @@ const HomePage = () => {
                 name="sorted"
                 value="release-date"
                 style={{ accentColor: "yellow" }}
+                onChange={sortedHandler}
               />
               <label htmlFor="css">release-date</label>
               <br />
