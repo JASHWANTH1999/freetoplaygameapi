@@ -32,12 +32,12 @@ const GamesBody = () => {
       .catch((err) => console.error(err));
   }, [platformname, categoryname, sortedname, dispatch]);
   const games = useSelector((state) => state.searchvalue.games);
-  console.log(games);
+
   return (
     <main className="container-fluid row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-3">
       {values
         ? games.map((state) => (
-            <div className="col" skey={state.id}>
+            <div className="col" key={state.id}>
               <div
                 className="card h-100"
                 style={{ backgroundColor: "black", color: "rgb(204, 53, 204)" }}
