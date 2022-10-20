@@ -93,7 +93,7 @@ const HomePage = () => {
                 <option value="strategy">strategy</option>
                 <option value="fantasy">fantasy</option>
                 <option value="sci-fi">sci-fi</option>
-                <option value="card-games">card-games</option>
+                <option value="card">card-games</option>
                 <option value="racing">racing</option>
                 <option value="fighting">fighting</option>
                 <option value="social">social</option>
